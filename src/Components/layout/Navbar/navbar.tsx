@@ -64,7 +64,11 @@ export default function Navbar() {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu min-h-full w-80 bg-slate-900 p-4 text-base-content">
+            <ul
+              className={cn(
+                "menu min-h-full w-80 bg-slate-900 p-4 text-base-content"
+              )}
+            >
               <li className="h-20">
                 <div className="flex items-center justify-start">
                   <div className="px-2">
