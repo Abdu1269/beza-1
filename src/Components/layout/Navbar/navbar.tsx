@@ -121,8 +121,8 @@ export default function Navbar() {
             <Image
               src="/logo_1.png"
               alt="menu"
-              width={80}
-              height={80}
+              width={40}
+              height={40}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="rounded-full"
               priority={true}
