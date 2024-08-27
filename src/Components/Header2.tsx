@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/logo.jpg"; // Assuming the logo is in the public folder
+import { cn } from "@/lib/_func/cn";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,11 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 h-24 flex items-center justify-between px-4 sm:px-6 lg:px-10 text-yellow-500">
+    <div
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 h-24 flex items-center justify-between px-4 sm:px-6 lg:px-10 text-yellow-500"
+      )}
+    >
       <div className="logo ml-4 sm:ml-8">
         <Image
           src={logo}
@@ -25,11 +30,23 @@ const Header = () => {
       </div>
 
       <ul className="hidden h-full gap-3 lg:flex">
-        {["Home", "About", "Products", "Services", "FAQ", "Our Team", "Blogs"].map((text) => (
+        {[
+          "Home",
+          "About",
+          "Products",
+          "Services",
+          "FAQ",
+          "Our Team",
+          "Blogs",
+        ].map((text) => (
           <Link
             key={text}
             className="mt-10 ml-6 lg:ml-10 font-serif hover:font-bold text-lg lg:text-xl"
-            href={text === "Home" ? "/" : `/${text.replace(/\s+/g, '').toLowerCase()}`}
+            href={
+              text === "Home"
+                ? "/"
+                : `/${text.replace(/\s+/g, "").toLowerCase()}`
+            }
           >
             {text}
           </Link>
@@ -63,11 +80,23 @@ const Header = () => {
       {isMenuOpen && (
         <div className="absolute top-24 right-3 w-1/2 bg-emerald-900 shadow-md lg:hidden">
           <ul className="flex flex-col items-center py-4">
-            {["Home", "About", "Products", "Services", "FAQ", "Our Team", "Blogs"].map((text) => (
+            {[
+              "Home",
+              "About",
+              "Products",
+              "Services",
+              "FAQ",
+              "Our Team",
+              "Blogs",
+            ].map((text) => (
               <Link
                 key={text}
                 className="mt-2 text-lg font-serif hover:font-bold"
-                href={text === "Home" ? "/" : `/${text.replace(/\s+/g, '').toLowerCase()}`}
+                href={
+                  text === "Home"
+                    ? "/"
+                    : `/${text.replace(/\s+/g, "").toLowerCase()}`
+                }
                 onClick={toggleMenu}
               >
                 {text}
