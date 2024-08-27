@@ -1,5 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "files.yenechinet.com",
+        port: "",
+        pathname: "*/*/**",
+      },
+    ],
+  },
   webpack(config, options) {
     config.module.rules = config.module.rules.map((rule) => {
       if (rule.oneOf) {

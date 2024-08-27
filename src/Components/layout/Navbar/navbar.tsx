@@ -80,9 +80,7 @@ export default function Navbar() {
                       />
                     </Link>
                   </div>
-                  <h3 className="text-md font-bold">
-                    Ministry of Science & Innovation{" "}
-                  </h3>
+                  <h3 className="text-md font-bold">Company </h3>
                 </div>
               </li>
               {NavbarLinks.map((link) => (
@@ -90,7 +88,11 @@ export default function Navbar() {
                   <li className="text-md my-1 flex flex-row items-center justify-between rounded-md bg-slate-700 px-3 py-3 font-semibold">
                     {link.title}
                     <span>
-                      <ChevronRight className="h-5 w-5 text-white" />
+                      <ChevronRight
+                        className="h-5 w-5 text-white"
+                        width={5}
+                        height={5}
+                      />
                     </span>
                   </li>
                 </Link>
@@ -99,6 +101,21 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* <div className="px-10">
+          <Link href="/" className="">
+            <Image
+              src="/logo_1.png"
+              alt="menu"
+              width={80}
+              height={80}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="rounded-full"
+              priority={true}
+            />
+          </Link>
+        </div> */}
+      </div>
+      <div className="navbar-center hidden lg:flex  justify-between">
         <div className="px-10">
           <Link href="/" className="">
             <Image
@@ -112,8 +129,6 @@ export default function Navbar() {
             />
           </Link>
         </div>
-      </div>
-      <div className="navbar-center hidden lg:flex">
         <ul
           className={cn(
             "menu menu-horizontal px-1 text-white",
